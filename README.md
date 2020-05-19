@@ -5,15 +5,15 @@ In this practical, you will perform multiple steps needed on data ingestion and 
 ## Requirements
 
 Participants are required to have running instance of Linux command line with basic user rights.
-You can follow instructions for installation of Virtual Box available in the instructions for our session on reproducible analyses:
+You can follow instructions for the installation of Virtual Box available in the learning material of our session on reproducible analyses:
 
 https://git-r3lab.uni.lu/R3/school/snakemake-tutorial/-/blob/master/virtualbox.md
 
 ## Exercise 1: Verify you are allowed to process the data
 
-Process of data download is considered a **processing** under GDPR. If you download the data without satisfying all requirements on legal data handling, your act will be classified as data breach which can result in fines and penalties if not reported to DPO/NDPA in time.
+Data download is considered a **processing** under the GDPR. If you download the data without satisfying all legal requirements, your act will be classified as data breach which can result in fines and penalties if not reported to DPO/NDPA in time.
 
-* For this practical, lets just be assured by the lecturer that the data you are downloading are not of sensitive nature.
+* For this practical, lets just be assured by the lecturer that the data you are downloading are not sensitive.
 
 ## Exercise 2: Ingestion folder
 
@@ -24,15 +24,15 @@ Process of data download is considered a **processing** under GDPR. If you downl
   cd <YOUR-NEW-DATA-FOLDER>
   ```
 
-## Exercise 3: Register data location in DAISY
+## Exercise 3: Register data storage location
 
-GDPR requires all sensitive data to be documented including access rights and storage locations.
+The GDPR requires all sensitive data to be documented including access rights and storage locations.
 
 * Register your new location of the incoming dataset in [DAISY](https://daisy-demo.elixir-luxembourg.org/)
 
 ## Exercise 4: Data download
 
-* Use following command to download dataset from WebDAV server
+* Use following command to download the data from WebDAV server
 
   ```bash
   curl https://webdav-r3lab.uni.lu/public/biocore/snakemake_tutorial/snakemake_tutorial_data.tar.gz.gpg -o snakemake_tutorial_data.tar.gz.gpg
@@ -96,10 +96,10 @@ The README file should be in plain format (TXT, Markdown) and contain following 
 
 To ensure that nobody will be tempering with the single original copy of the data, it is a best practice to make it read-only.
 
-* Use `chmod` - GNU coreutils tool for changing the mode of the files and directories
+* Use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
 
   ```bash
-  chmod -R a-w <YOUR-FILE/DIR>
+  chmod -R a-w <YOUR-DATA-DIR>
   ```
 
 ## Exercise 9: Create symbolic link
