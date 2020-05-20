@@ -20,8 +20,8 @@ Data download is considered a **processing** under the GDPR. If you download the
 * Create your ingestion folder and change your working directory
 
   ```bash
-  mkdir <YOUR-NEW-DATA-FOLDER>
-  cd <YOUR-NEW-DATA-FOLDER>
+  mkdir test-data
+  cd test-data
   ```
 
 ## Exercise 3: Register data storage location
@@ -116,7 +116,7 @@ Research data are commonly large and making copies of the same dataset makes it 
 * create symbolic link from your analyses folder to your data folder
 
   ```bash
-  ln -s <YOUR-DATA-FOLDER> my-first-analyses/data
+  ln -s test-data my-test-analyses/data
   ```
 
 ## Exercise 10: Inspect your setup
