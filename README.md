@@ -96,27 +96,21 @@ The README file should be in plain format (TXT, Markdown) and contain following 
 
 To ensure that nobody will be tempering with the single original copy of the data, it is a best practice to make it read-only.
 
-* Use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
+* Navigate back to the parent directory and use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
 
   ```bash
-  chmod -R a-w <YOUR-DATA-DIR>
+  cd ..
+  chmod -R a-w test-data
   ```
 
 ## Exercise 9: Create symbolic link
 
 Research data are commonly large and making copies of the same dataset makes it hard to manage. It is particularly much harder to keep track of all versions/copies of the data. Moreover, redundant copies occupy unnecessary disk space both on actual storage and on backup storage.
 
-* Navigate back to the parent directory and create folder for your first analyses
+* Create folder for your first analyses including folder for data
 
   ```bash
-  cd ..
-  mkdir my-first-analyses
-  ```
-
-* create data folder in your new analyses folder
-
-  ```bash
-  mkdir -p my-first-analyses/data
+  mkdir -p my-test-analyses/data
   ```
 
 * create symbolic link from your analyses folder to your data folder
