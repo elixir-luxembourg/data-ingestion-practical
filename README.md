@@ -125,7 +125,7 @@ Research data are commonly large and making copies of the same dataset makes it 
 * create symbolic link from your analyses folder to your data folder
 
   ```bash
-  ln -s test-data my-test-analyses/data
+  ln -s ../../test-data my-test-analyses/data
   ```
 
 ## Exercise 10: Inspect your setup
