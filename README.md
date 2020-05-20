@@ -5,6 +5,10 @@ In this practical, you will perform multiple steps needed on data ingestion and 
 ## Requirements
 
 Participants are required to have running instance of Linux command line with basic user rights.
+#### Using Cygwin
+You can use [Cygwin](https://www.cygwin.com/). Please select packages **gnupg** and **tree** to be installed.
+
+#### Using Virtual Box
 You can follow instructions for the installation of Virtual Box available in the learning material of our session on reproducible analyses:
 
 https://git-r3lab.uni.lu/R3/school/snakemake-tutorial/-/blob/master/virtualbox.md
