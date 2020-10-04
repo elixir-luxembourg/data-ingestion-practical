@@ -1,6 +1,6 @@
-# Practical on data ingestion
+# Practical exercise on data ingestion
 
-In this practical, you will perform multiple steps needed on data ingestion and working environment setup. You will download the test dataset, verify its integrity, register it in data information system and add minimal documentation. Finally, you will have data stored in optimal way for subsequent (re-)use in your future research projects.
+In this practical, you will perform multiple steps needed on data ingestion and working environment setup. You will download the test dataset, verify its integrity and add minimal documentation. Finally, you will have data stored in optimal way for subsequent (re-)use in your future research projects.
 
 ## Requirements
 
@@ -18,13 +18,8 @@ You can follow instructions for the installation of Virtual Box available in the
 
 https://git-r3lab.uni.lu/R3/school/snakemake-tutorial/-/blob/master/virtualbox.md
 
-## Exercise 1: Verify you are allowed to process the data
 
-Data download is considered a **processing** under the GDPR. If you download the data without satisfying all legal requirements, your act will be classified as data breach which can result in fines and penalties if not reported to DPO/NDPA in time.
-
-* For this practical, lets just be assured by the lecturer that the data you are downloading are not sensitive.
-
-## Exercise 2: Ingestion folder
+## Step 1: Ingestion folder
 
 * Create your ingestion folder and change your working directory
 
@@ -33,13 +28,8 @@ Data download is considered a **processing** under the GDPR. If you download the
   cd test-data
   ```
 
-## Exercise 3: Register data storage location
 
-The GDPR requires all sensitive data to be documented including access rights and storage locations.
-
-* Register your new location of the incoming dataset in [DAISY](https://daisy-demo.elixir-luxembourg.org/)
-
-## Exercise 4: Data download
+## Step 2: Data download
 
 * Use following command to download the data from WebDAV server
 
@@ -47,7 +37,7 @@ The GDPR requires all sensitive data to be documented including access rights an
   curl https://webdav-r3lab.uni.lu/public/biocore/snakemake_tutorial/snakemake_tutorial_data.tar.gz.gpg -o snakemake_tutorial_data.tar.gz.gpg
   ```
 
-## Exercise 5: Checksums
+## Step 3: Checksums
 
 Your collaborator/data provider has generated checksums - digital signatures of the file - when posting the data on your shared storage. These are commonly saved in plain text file placed close to the actual data.
 
@@ -75,7 +65,7 @@ Data might have been corrupted already on the server or during the transfer. Thi
   md5sum -c snakemake_tutorial_data.tar.gz.gpg.md5
   ```
 
-## Exercise 6: Decrypt and extract data
+## Step 4: Decrypt and extract data
 
 The data are encrypted for high security measures. The passkey or passphrase for decryption is `elixirLU`. In real situations the passphrase should always be transmitted in a secure way and separate from the data!
 
@@ -86,7 +76,7 @@ The data are encrypted for high security measures. The passkey or passphrase for
   tar -xzf snakemake_tutorial_data.tar.gz
   ```
 
-## Exercise 7: Create a README file
+## Step 5: Create a README file
 
 Write minimal information about the folder and data you have just downloaded.
 
@@ -101,7 +91,7 @@ The README file should be in plain format (TXT, Markdown) and contain following 
 
 (Press key "i" to start typing. To save and exit - hit "Esc", type ":wq" and hit "Enter")
 
-## Exercise 8: Make data read-only
+## Step 6: Make data read-only
 
 To ensure that nobody will be tempering with the single original copy of the data, it is a best practice to make it read-only.
 
@@ -112,7 +102,7 @@ To ensure that nobody will be tempering with the single original copy of the dat
   chmod -R a-w test-data
   ```
 
-## Exercise 9: Create symbolic link
+## Step 7: Create symbolic link
 
 Research data are commonly large and making copies of the same dataset makes it hard to manage. It is particularly much harder to keep track of all versions/copies of the data. Moreover, redundant copies occupy unnecessary disk space both on actual storage and on backup storage.
 
@@ -128,7 +118,7 @@ Research data are commonly large and making copies of the same dataset makes it 
   ln -s ../../test-data my-test-analyses/data
   ```
 
-## Exercise 10: Inspect your setup
+## Step 8: Inspect your setup
 
 * Get an overview of all folders and files in your directory.
 
