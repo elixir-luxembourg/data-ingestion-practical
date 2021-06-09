@@ -1,129 +1,109 @@
 # Practical exercise on data ingestion
 
-In this practical, you will perform multiple steps needed on data ingestion and working environment setup. You will download the test dataset, verify its integrity and add minimal documentation. Finally, you will have data stored in optimal way for subsequent (re-)use in your future research projects.
+In this practical, you will perform multiple steps needed on data ingestion and working environment setup. You will download the test dataset, verify its integrity and add minimal documentation. Finally, you will have data stored in optimal way for subsequent (re-)use in your future steps.
 
 ## Requirements
 
-Participants are required to have running instance of Linux command line with basic user rights.
+Participants are required to have several tools installed before the practical. These will allow them to work with `.7z` archives and verify MD5 checksums:
 
-#### Using Cygwin
+* [Windows](./requirements/windows.md)
+* [Mac](./requirements/mac.md)
+* [Linux](./requirements/linux.md)
+## Step 1: Register the data in your local data catalogue
+Registering the data is necessary for compliance with GDPR. The record should also contain information on actual physical location of the data which should be known before actual ingestion.
+## Step 2: Receive data and decryption password
 
-You can use [Cygwin](https://www.cygwin.com/). Please select packages **gnupg** and **tree** to be installed.
+* Download the data
 
-![](cygwin-packages.png)
+  https://dropit.uni.lu/invitations?share=d068283d6e56c34e25d8&dl=0
 
-#### Using Virtual Box
+* Get encryption password:
+  
+  https://privatebin.lcsb.uni.lu/?b9059abddf9a7450#3IHjjvfPnnRVwldOcxURjupy84D4KITVxzOKvFCc1JI=
 
-You can follow instructions for the installation of Virtual Box available in the learning material of our session on reproducible analyses:
+(Just for reproducibility purposes the password can be found [here](./data/encryption_password.md). Trainees should always receive the password through a secure channel).
 
-https://git-r3lab.uni.lu/R3/school/snakemake-tutorial/-/blob/master/virtualbox.md
+## Step 3: Decrypt and extract the data
+### Windows
+1. Right-click on the folder
+2. Select 7zip -> Extract here
+3. Enter the encryption password
 
+<img src='./img/win_7zip_extract-archive.png' width=300>
+<img src='./img/win_7zip_enter-password.png' width=300>
 
-## Step 1: Ingestion folder
+### Mac
+TODO:
 
-* Create your ingestion folder and change your working directory
-
+### Linux
+Use `7z` command line tool to extract the archive.
   ```bash
-  mkdir test-data
-  cd test-data
+  7z x EPIC-DREM_chip-seq.7z
+  # Enter the ecryption password
   ```
-
-
-## Step 2: Data download
-
-* Use following command to download the data from WebDAV server
-
-  ```bash
-  curl https://webdav-r3lab.uni.lu/public/biocore/snakemake_tutorial/snakemake_tutorial_data.tar.gz.gpg -o snakemake_tutorial_data.tar.gz.gpg
-  ```
-
-## Step 3: Checksums
+## Step 4: Checksums
 
 Your collaborator/data provider has generated checksums - digital signatures of the file - when posting the data on your shared storage. These are commonly saved in plain text file placed close to the actual data.
 
 In our test scenario, `md5sum` tool was used for checksum generation.
 
-* Download checksums
+* Download checksums:
 
-  ```bash
-  curl https://webdav-r3lab.uni.lu/public/biocore/snakemake_tutorial/snakemake_tutorial_data.tar.gz.gpg.md5 -o snakemake_tutorial_data.tar.gz.gpg.md5
-  ```
+  https://dropit.uni.lu/invitations?share=27c80a6f57748d13e9c6&dl=0
 
-* Inspect file with checksums
-
-  ```bash
-  cat snakemake_tutorial_data.tar.gz.gpg.md5
-  ```
+* Open the downloaded file with your favorite text editor and inspect the content
 
 ### Verify checksums
 
-Data might have been corrupted already on the server or during the transfer. This step ensures that the data are exactly the same as at the time of last generation of checksums.
+Data might have been corrupted already on the server or during the transfer. This step ensures that the data are exactly the same as at the time of the last checksum computation.
+#### Windows
+See steps on [verifying checksums on Windows](./guides/verify_checksums_windows.md)
 
-* Verify checksums
-
+#### Mac
+See steps on [verifying checksums on Mac](./guides/verify_checksums_windows.md)
+#### Linux
+Place the file with checksums into your directory and run following command:
+  
   ```bash
-  md5sum -c snakemake_tutorial_data.tar.gz.gpg.md5
-  ```
-
-## Step 4: Decrypt and extract data
-
-The data are encrypted for high security measures. The passkey or passphrase for decryption is `elixirLU`. In real situations the passphrase should always be transmitted in a secure way and separate from the data!
-
-* Decrypt the data with `gpg` tool and finally unpack it.
-
-  ```bash
-  gpg -o snakemake_tutorial_data.tar.gz --decrypt snakemake_tutorial_data.tar.gz.gpg
-  tar -xzf snakemake_tutorial_data.tar.gz
+  md5sum -c checksums.md5
   ```
 
 ## Step 5: Create a README file
 
 Write minimal information about the folder and data you have just downloaded.
 
-The README file should be in plain format (TXT, Markdown) and contain following information: dataset name/title, date of creation/download, data origin, version of the data, data owner/responsible, data structure, how was the data downloaded, ...
-
-* Use following commands to create a README file and enter the editor
-
-  ```bash
-  touch README.md
-  vi README.md
-  ```
-
-(Press key "i" to start typing. To save and exit - hit "Esc", type ":wq" and hit "Enter")
+The README file should be in plain format (TXT, Markdown) and contain following information:
+  * dataset name/title
+  * date of creation/download
+  * data origin
+  * version of the data
+  * data owner/responsible
+  * data structure
+  * how was the data downloaded/received  
+  * ...
 
 ## Step 6: Make data read-only
 
 To ensure that nobody will be tempering with the single original copy of the data, it is a best practice to make it read-only.
 
-* Navigate back to the parent directory and use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
+#### Windows
+  1. Right-click on the folder
+  2. Select `Properties`
+  3. In `Attributes` section, check the `Read-only` checkbox
+  4. Click on `Apply` button and confirm
+   
+#### Mac
+TODO:
+#### Linux
+Navigate the parent directory and use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
 
   ```bash
   cd ..
   chmod -R a-w test-data
   ```
 
-## Step 7: Create symbolic link
-
-Research data are commonly large and making copies of the same dataset makes it hard to manage. It is particularly much harder to keep track of all versions/copies of the data. Moreover, redundant copies occupy unnecessary disk space both on actual storage and on backup storage.
-
-* Create folder for your first analyses including folder for data
-
-  ```bash
-  mkdir -p my-test-analyses/data
-  ```
-
-* create symbolic link from your analyses folder to your data folder
-
-  ```bash
-  ln -s ../../test-data my-test-analyses/data
-  ```
-
-## Step 8: Inspect your setup
-
-* Get an overview of all folders and files in your directory.
-
-  ```bash
-  tree -p
-  ```
-
-Notice your symbolic link and read only permissions set on files in data folder.
+#### Create a new version of your dataset
+TODO:
+1. create new folder with proper file name (include suffix with version or date)
+2. place new data into the folder
+3. Add CHANGE.log describing the change
