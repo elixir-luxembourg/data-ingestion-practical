@@ -83,11 +83,9 @@ Place the file with checksums next to the file archive and run following command
 
 1. Right-click on the file archive and select "Open with" -> KEKA
 
-   <img src="./img/keka-right-click.png" width=300>
+   <img src="./img/mac_keka-right-click.png" width=300>
 
 2. Enter the encryption password
-
-   <img src='./img/mac_archive-utility-password.png' width=300>
 
 ### Linux
 
@@ -142,8 +140,8 @@ Navigate the parent directory and use `chmod` - GNU coreutils tool for changing 
   chmod -R a-w test-data
   ```
 
-#### Create a new version of your dataset
-TODO:
+## Step 7: Create a new version of your dataset
+
 1. create new folder with proper file name (include suffix with version or date)
 2. place new data into the folder
 3. Add CHANGE.log describing the change
@@ -155,7 +153,7 @@ Your task will be to update the dataset and sent it to the trainer. To follow be
    1. include README file for recipient in the folder
    2. create an encrypted archive
    3. generate checksums
-2. Send the data, checksums and encryption password securely. Remember to use secure channels intended for data transfer.
+2. Send the data, checksums and encryption password securely. Remember to use secure channels designed for data transfer.
 
 #### Windows
 
