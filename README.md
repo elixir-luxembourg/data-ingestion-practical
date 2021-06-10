@@ -118,7 +118,11 @@ To ensure that nobody will be tempering with the single original copy of the dat
   4. Click on `Apply` button and confirm
    
 #### Mac
-TODO:
+1. Using Finder, select the folder and go to File > Get Info
+2. Expand the section `Sharing & Permissions`
+3. If the small lock icon at the bottom is locked, click on it to unlock it. 
+4. Set Priviledge to `Read only` for all users/user groups.
+
 #### Linux
 Navigate the parent directory and use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
 
