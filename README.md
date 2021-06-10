@@ -21,33 +21,7 @@ Please, read the [email](./data/email-with-data-link.rtf) from your collaborator
 * Download the data
 * Get encryption password
 
-## Step 3: Decrypt and extract the data
-
-### Windows
-
-1. Right-click on the archive file
-2. Select 7zip -> Extract here
-3. Enter the encryption password
-
-<img src='./img/win_7zip_extract-archive.png' width=300>
-<img src='./img/win_7zip_enter-password.png' width=300>
-
-### Mac
-
-1. Double-click on the archive file
-2. Enter the encryption password
-
-   <img src='./img/mac_archive-utility-password.png' width=300>
-
-### Linux
-
-Use `7z` command line tool to extract the archive.
-  ```bash
-  7z x EPIC-DREM_chip-seq.7z
-  # Enter the ecryption password
-  ```
-
-## Step 4: Checksums
+## Step 3: Checksums
 
 Your collaborator/data provider has generated checksums before uploading the data on your shared storage. These are commonly saved in plain text file and placed close to the actual data.
 
@@ -65,16 +39,15 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
 #### Windows
 
-1. Put the `checksums.md5` file in your dataset directory
-2. Install `md5summer` tool (see [instructions](../requirements/windows.md))
-3. Run `md5summer.exe`
-4. Choose the root folder to be the folder of the dataset
+1. Put the checksum file next to your file archive
+2. Run `md5summer.exe` (see [instructions](../requirements/windows.md) for download)
+3. Choose the root folder to be the folder with the file archive
 
    <img src='./img/win_checksum-root-folder.png' width=300>
 
-5. Ensure the `MD5` algorithm is selected
-6. Click `Verify sums` and select the `checksums.md5` file
-7. Inspect the result
+4. Ensure the `MD5` algorithm is selected
+5. Click `Verify sums` and select the file with checksums
+6. Inspect the result
 
     <img src='./img/win_checksum-choose-file.png' width=300>
 
@@ -82,7 +55,10 @@ Data might have been corrupted already on the server or during the transfer. Thi
 1. Install and run `Checksum` tool (see [instructions](../requirements/windows.md))
 2. Choose MD5 algorithm
 3. Drag and drop the file archive into `Checksum` window
-4. Compare the result with the checksum provided by your collaborator by pasting in into the 
+
+   <img src="./img/mac_checksums-field.png" width=300>
+
+4. Compare the result with the provided checksum by pasting it into `Paste reported checksum here` field. 
 
 #### Linux
 Place the file with checksums next to the file archive and run following command:
@@ -90,6 +66,33 @@ Place the file with checksums next to the file archive and run following command
   ```bash
   md5sum -c EPIC-DREM_chip-seq.7z.md5
   ```
+
+## Step 4: Decrypt and extract the data
+
+### Windows
+
+1. Right-click on the archive file
+2. Select 7zip -> Extract here
+3. Enter the encryption password
+
+<img src='./img/win_7zip_extract-archive.png' width=300>
+<img src='./img/win_7zip_enter-password.png' width=300>
+
+### Mac
+TODO: KEKA?
+1. Double-click on the archive file
+2. Enter the encryption password
+
+   <img src='./img/mac_archive-utility-password.png' width=300>
+
+### Linux
+
+Use `7z` command line tool to extract the archive.
+  ```bash
+  7z x EPIC-DREM_chip-seq.7z
+  # Enter the ecryption password
+  ```
+
 
 ## Step 5: Create a README file
 
@@ -120,8 +123,9 @@ To ensure that nobody will be tempering with the single original copy of the dat
 #### Mac
 1. Using Finder, select the folder and go to File > Get Info
 2. Expand the section `Sharing & Permissions`
-3. If the small lock icon at the bottom is locked, click on it to unlock it. 
+3. If the small lock icon at the bottom is locked, click on it to unlock it.
 4. Set Priviledge to `Read only` for all users/user groups.
+  TODO: add screenshot of the window 
 
 #### Linux
 Navigate the parent directory and use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
