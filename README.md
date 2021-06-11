@@ -27,11 +27,7 @@ Your collaborator/data provider has generated checksums before uploading the dat
 
 In our test scenario, `md5sum` tool was used for checksum generation.
 
-* Download checksums:
-
-  https://dropit.uni.lu/invitations?share=27c80a6f57748d13e9c6&dl=0
-
-* Open the downloaded file with your favorite text editor and inspect the content
+* Open the downloaded checksum file (`EPIC-DREM_chip-seq.7z.md5`) with your favorite text editor and inspect the content
 
 ### Verify checksums
 
@@ -195,6 +191,7 @@ Create an archive:
   ```
   
 Genereate checksum file for the archive:
-```bash
-md5sum <name-of-the-archive>.7z > checksums.md5
-```
+
+  ```bash
+  md5sum <name-of-the-archive>.7z > checksums.md5
+  ```
