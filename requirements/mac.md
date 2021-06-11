@@ -14,17 +14,17 @@
 ## Without GUI
 
 If you install following tools please refer to the solutions for Linux based systems in the practical.
-### 7zip
+### Working with file archives
 
-Install the tool using brew:
+Install the tool `7-zip` using brew:
 
 ```bash
 brew install p7zip
 ```
 
-### md5sha1sum
+### Verifying checksums
 
-Install the tool using brew:
+Install the tool `md5sum` using brew:
 
 ```bash
 brew install md5sha1sum

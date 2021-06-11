@@ -2,13 +2,13 @@
 
 ## With GUI
 
-### md5summer
+### Working with file archives
 
-Download the tool from its official [page](https://www.md5summer.org/) and extract the zip.
+Download the tool `7-zip` from its official [page](https://www.7-zip.org/) and run the installation.
 
-### 7zip
+### Verifying checksums
 
-Download the tool from its official [page](https://www.7-zip.org/) and run the installation.
+Download the tool `md5summer` from its official [page](https://www.md5summer.org/) and extract the zip.
 
 ## Without GUI
 

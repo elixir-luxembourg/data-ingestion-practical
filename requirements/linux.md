@@ -1,6 +1,8 @@
 # Requirements for Linux based OS users
 ## Without GUI
-### Installing 7zip
+### Working with file archives
+In the practical we will use `7-zip` tool for working with file archives.
+#### Install 7-zip
 ##### Debian/Ubuntu
 
 ```bash
@@ -14,7 +16,7 @@ sudo apt-get install p7zip-full
 yum install p7zip
 ```
 
-### Installing md5sum
+### Verifying checksums
 `md5sum` tool comes preinstalled on most of Linux platforms. You can verify you have it installed by running:
 
 ```bash
