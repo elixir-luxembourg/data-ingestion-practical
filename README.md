@@ -47,7 +47,7 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
     <img src='./img/win_checksum-choose-file.png' width=300>
 
-#### Mac
+#### Mac with GUI
 
 1. Install and run `Checksum` tool (see [instructions](../requirements/windows.md))
 2. Choose MD5 algorithm
@@ -75,7 +75,7 @@ Place the file with checksums next to the file archive and run following command
 <img src='./img/win_7zip_extract-archive.png' width=300>
 <img src='./img/win_7zip_enter-password.png' width=300>
 
-### Mac
+### Mac with GUI
 
 1. Right-click on the file archive and select "Open with" -> KEKA
 
@@ -119,7 +119,8 @@ To ensure that nobody will be tempering with the single original copy of the dat
   3. In `Attributes` section, check the `Read-only` checkbox
   4. Click on `Apply` button and confirm
 
-#### Mac
+#### Mac with GUI
+
 1. Right-click on the folder/file and select "Get Info"
 2. Expand the section `Sharing & Permissions`
 3. If the small lock icon at the bottom is locked, click on it to unlock it.
@@ -170,7 +171,7 @@ Your task will be to update the dataset and sent it to the trainer. To follow be
 
    4. Save the checksum file
 
-#### Mac
+#### Mac with GUI
 
 1. Open KEKA tool
 
