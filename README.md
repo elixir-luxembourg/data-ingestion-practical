@@ -140,11 +140,11 @@ Navigate the parent directory and use `chmod` - GNU coreutils tool for changing 
   chmod -R a-w test-data
   ```
 
-## Step 7: Create a new version of your dataset
+<!-- ## Step 7: Create a new version of your dataset
 
 1. create new folder with proper file name (include suffix with version or date)
 2. place new data into the folder
-3. Add CHANGE.log describing the change
+3. Add CHANGE.log describing the change -->
 
 ### Final Assingment
 
