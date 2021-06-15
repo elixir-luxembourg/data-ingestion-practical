@@ -16,7 +16,7 @@ Registering the data is necessary for compliance with GDPR. The record should al
 
 ## Step 2: Receive data and decryption password
 
-Please, read the [email](./data/email-with-data-link.rtf) from your collaborator with download link and password link.
+Please, read the [email](./data/email-with-data-link.md) from your collaborator with download link and password link.
 
 * Download the data
 * Get encryption password
