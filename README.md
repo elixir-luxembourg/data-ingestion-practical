@@ -35,17 +35,18 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
 #### Windows
 
-1. Put the checksum file next to your file archive
-2. Run `md5summer.exe` (see [instructions](../requirements/windows.md) for download)
-3. Choose the root folder to be the folder with the file archive
+1. Install `PeaZip` tool (see [instructions](../requirements/windows.md))
+2. Right-click on a file -> PeaZip -> `CRC, has and file tools`
 
-   <img src='./img/win_checksum-root-folder.png' width=300>
+   <img src='./img/win_peazip_add-to-archive.png' width=300>
 
-4. Ensure the `MD5` algorithm is selected
-5. Click `Verify sums` and select the file with checksums
-6. Inspect the result
+3. Hit `OK`
 
-    <img src='./img/win_checksum-choose-file.png' width=300>
+   <img src='./img/win_peazip_checksum-select-file.png' width=300>
+
+4. Go to `Clipboard` and verify the MD5 checksum string is matching the one in provided checksum file.
+
+    <img src='./img/win_peazip_checksum-and-hash.png' width=300>
 
 #### Mac with GUI
 
@@ -69,11 +70,11 @@ Place the file with checksums next to the file archive and run following command
 ### Windows
 
 1. Right-click on the archive file
-2. Select 7zip -> Extract here
+2. Select `PeaZip` -> Extract here
 3. Enter the encryption password
 
-<img src='./img/win_7zip_extract-archive.png' width=300>
-<img src='./img/win_7zip_enter-password.png' width=300>
+<img src='./img/win_peazip_add-to-archive.png' width=300>
+<img src='./img/win_peazip_enter-password.png' width=300>
 
 ### Mac with GUI
 
@@ -154,22 +155,17 @@ Your task will be to update the dataset and sent it to the trainer. To follow be
 
 #### Windows
 
-1. Right-click on the folder and select 7-zip -> Add to archive
+1. Right-click on the folder and select `PeaZip` -> Add to archive
 
-    <img src="./img/win_7zip_add-to-archive-right-click.png" width=300>
+    <img src="./img/win_peazip_add-to-archive.png" width=300>
 
-2. Select archive name and format, enter encryption password and hit OK
+2. Select archive name and format. Click on `Enter password / keyfile` and enter your encryption phrase.
   
-    <img src="./img/win_7zip-add-to-archive.png" width=300>
+    <img src="./img/win_peazip_create-zip.png" width=300>
 
-3. For checksum generation you can use again the `md5summer` tool:
-   1. Select the root folder
-   2. Click on "Create sums"
-   3. Add archive file to the selection and hit OK
+3. For checksum computation you can use the same steps as in the section [Verify checksums](#verify-checksums)
 
-      <img src=".img/../img/win_md5summer-add-to-list.png" width=300>
-
-   4. Save the checksum file
+4. Save the checksum in a file with the same name + `.md5` suffix
 
 #### Mac with GUI
 
