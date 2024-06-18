@@ -4,11 +4,7 @@
 
 ### Working with file archives
 
-Download the tool `7-zip` from its official [page](https://www.7-zip.org/) and run the installation.
-
-### Verifying checksums
-
-Download the tool `md5summer` from its official [page](https://www.md5summer.org/) and extract the zip.
+Download the tool `PeaZip` from its official [page](https://peazip.github.io/) and run the installation.
 
 ## Without GUI
 
