@@ -35,7 +35,7 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
 #### Windows
 
-1. Install `PeaZip` tool (see [instructions](../requirements/windows.md))
+1. Install `PeaZip` tool (see [instructions](./requirements/windows.md))
 2. Right-click on a file -> PeaZip -> `CRC, has and file tools`
 
    <img src='./img/win_peazip_add-to-archive.png' width=300>
@@ -50,7 +50,7 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
 #### Mac with GUI
 
-1. Install and run `Checksum` tool (see [instructions](../requirements/mac.md))
+1. Install and run `Checksum` tool (see [instructions](./requirements/mac.md))
 2. Choose MD5 algorithm
 3. Drag and drop the file archive into `Checksum` window
 
