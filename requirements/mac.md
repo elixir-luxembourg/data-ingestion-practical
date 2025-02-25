@@ -5,9 +5,10 @@
 ### KEKA
 
 **KEKA** is widely used archiving tool. It is free if downloaded directly from their [website](https://www.keka.io/en/).
+
 ### Checksum
 
-`Checksum` is simple free tool for checksum computation available directly from Apple App Store.
+[Checksums](https://apps.apple.com/lu/app/checksums/id6538720497?mt=12) is simple free tool for checksum computation available directly from Apple App Store.
 
 <img src="./img/../../img/mac_checksums-apple-store.png" width=400>
 
