@@ -6,9 +6,9 @@ In this practical, you will perform multiple steps needed on data ingestion and 
 
 Participants are required to have several tools installed before the practical. These will allow them to work with `.7z` archives and verify MD5 checksums. Follow the link according to your platform:
 
-* [Windows](./requirements/windows.md)
-* [Mac](./requirements/mac.md)
-* [Linux](./requirements/linux.md)
+- [Windows](./requirements/windows.md)
+- [Mac](./requirements/mac.md)
+- [Linux](./requirements/linux.md)
 
 ## Step 1: Register the data in your local data catalogue
 
@@ -18,8 +18,8 @@ Registering the data is necessary for compliance with GDPR. The record should al
 
 Please, read the [email](./data/email-with-data-link.md) from your collaborator with download link and password link.
 
-* Download the data
-* Get encryption password
+- Download the data
+- Get encryption password
 
 ## Step 3: Checksums
 
@@ -27,7 +27,7 @@ Your collaborator/data provider has generated checksums before uploading the dat
 
 In our test scenario, `md5sum` tool was used for checksum generation.
 
-* Open the downloaded checksum file (`EPIC-DREM_chip-seq.7z.md5`) with your favorite text editor and inspect the content
+- Open the downloaded checksum file (`EPIC-DREM_chip-seq.7z.md5`) with your favorite text editor and inspect the content
 
 ### Verify checksums
 
@@ -46,7 +46,7 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
 4. Go to `Clipboard` and verify the MD5 checksum string is matching the one in provided checksum file.
 
-    <img src='./img/win_peazip_checksum-and-hash.png' width=300>
+<img src='./img/win_peazip_checksum-and-hash.png' width=300>
 
 #### Mac with GUI
 
@@ -56,14 +56,15 @@ Data might have been corrupted already on the server or during the transfer. Thi
 
    <img src="./img/mac_checksums-field.png" width=300>
 
-4. Compare the result with the provided checksum by pasting it into `Paste reported checksum here` field. 
+4. Compare the result with the provided checksum by pasting it into `Paste reported checksum here` field.
 
 #### Linux
+
 Place the file with checksums next to the file archive and run following command:
-  
-  ```bash
-  md5sum -c EPIC-DREM_chip-seq.7z.md5
-  ```
+
+```bash
+md5sum -c EPIC-DREM_chip-seq.7z.md5
+```
 
 ## Step 4: Decrypt and extract the data
 
@@ -88,26 +89,26 @@ Place the file with checksums next to the file archive and run following command
 
 Use `7z` command line tool to extract the archive.
 
-  ```bash
-  7z x EPIC-DREM_chip-seq.7z
-  # Enter the ecryption password
-  ```
+```bash
+7z x EPIC-DREM_chip-seq.7z
+# Enter the ecryption password
+```
 
 ## Step 5: Create a README file
 
 Write minimal information about the folder and data you have just downloaded.
 
 The README file should be in plain format (TXT, Markdown) and contain following information:
-  
-  * dataset name/title
-  * project name
-  * date of creation/download
-  * data origin
-  * version of the data
-  * data owner/responsible
-  * data structure
-  * how was the data downloaded/received
-  * ...
+
+- dataset name/title
+- project name
+- date of creation/download
+- data origin
+- version of the data
+- data owner/responsible
+- data structure
+- how was the data downloaded/received
+- ...
 
 ## Step 6: Make data read-only
 
@@ -115,10 +116,10 @@ To ensure that nobody will be tempering with the single original copy of the dat
 
 #### Windows
 
-  1. Right-click on the folder
-  2. Select `Properties`
-  3. In `Attributes` section, check the `Read-only` checkbox
-  4. Click on `Apply` button and confirm
+1. Right-click on the folder
+2. Select `Properties`
+3. In `Attributes` section, check the `Read-only` checkbox
+4. Click on `Apply` button and confirm
 
 #### Mac with GUI
 
@@ -128,15 +129,16 @@ To ensure that nobody will be tempering with the single original copy of the dat
 4. Set Priviledge to `Read only` for all users/user groups.
 5. Use bottom dropdown icon to apply changes to all enclosed items
 
-    <img src=".img/../img/mac_read-only-permissions-apply.png" width=300>
+<img src=".img/../img/mac_read-only-permissions-apply.png" width=300>
 
 #### Linux
+
 Navigate the parent directory and use `chmod` - GNU coreutils tool for changing the mode of the files and directories to be read-only
 
-  ```bash
-  cd ..
-  chmod -R a-w test-data
-  ```
+```bash
+cd ..
+chmod -R a-w test-data
+```
 
 <!-- ## Step 7: Create a new version of your dataset
 
@@ -147,6 +149,7 @@ Navigate the parent directory and use `chmod` - GNU coreutils tool for changing 
 ### Final Assingment
 
 Your task will be to update the dataset and sent it to the trainer. To follow best practices, you should:
+
 1. Prepare data for transfer
    1. include README file for recipient in the folder
    2. create an encrypted archive
@@ -157,11 +160,11 @@ Your task will be to update the dataset and sent it to the trainer. To follow be
 
 1. Right-click on the folder and select `PeaZip` -> Add to archive
 
-    <img src="./img/win_peazip_add-to-archive.png" width=300>
+<img src="./img/win_peazip_add-to-archive.png" width=300>
 
 2. Select archive name and format. Click on `Enter password / keyfile` and enter your encryption phrase.
-  
-    <img src="./img/win_peazip_create-zip.png" width=300>
+
+<img src="./img/win_peazip_create-zip.png" width=300>
 
 3. For checksum computation you can use the same steps as in the section [Verify checksums](#verify-checksums)
 
@@ -171,7 +174,7 @@ Your task will be to update the dataset and sent it to the trainer. To follow be
 
 1. Open KEKA tool
 
-    <img src="./img/mac_keka-add-to-archive.png" width=300>
+<img src="./img/mac_keka-add-to-archive.png" width=300>
 
 2. Choose the type of your archive and enter encryption password
 3. Drag and drop the folder into the window
@@ -182,13 +185,13 @@ Your task will be to update the dataset and sent it to the trainer. To follow be
 
 Create an archive:
 
-  ```bash
-  7z a <name-of-the-archive>.7z <folder-to-be-archived> -p
-  # enter the encryption password
-  ```
-  
+```bash
+7z a <name-of-the-archive>.7z <folder-to-be-archived> -p
+# enter the encryption password
+```
+
 Genereate checksum file for the archive:
 
-  ```bash
-  md5sum <name-of-the-archive>.7z > checksums.md5
-  ```
+```bash
+md5sum <name-of-the-archive>.7z > checksums.md5
+```
