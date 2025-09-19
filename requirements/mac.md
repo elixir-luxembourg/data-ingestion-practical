@@ -4,7 +4,11 @@
 
 ### KEKA
 
-**KEKA** is widely used archiving tool. It is free if downloaded directly from their [website](https://www.keka.io/en/).
+**KEKA** is widely used archiving tool. 
+
+DO NOT DOWNLOAD FROM Mac App Store! 
+
+It is free if downloaded directly from their [website](https://d.keka.io/))
 
 ### Checksum
 
